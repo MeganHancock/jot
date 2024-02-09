@@ -17,7 +17,7 @@
     defer></script>
 </head>
 
-<body class="debug">
+<body class="">
   <!-- SECTION -->
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
@@ -43,9 +43,9 @@
   <!-- SECTION -->
   <main>
     <div class="container-fluid m-auto mt-1 p-5">
-      <section class="row">
+      <section class="row justify-content-between no-wrap">
 
-        <div class="col-4 card rounded-2 p-5 me-5">
+        <div class="col-4 card rounded-2 p-5 me-0">
           <div class="">
 
             <div id="formToCreateANewJot">
@@ -72,33 +72,36 @@
           </div>
         </div>
 
-        <div class="col-8 card rounded-2 p-5" id="activeJot">
 
 
 
-          <div class="row justify-content-between card">
+        <div class="col-7 ms-1 card rounded-2 p-5" id="activeJot">
+          <section class="row justify-content-between">
 
-            <div class="col-4 d-flex flex-column align-items-stretch flex-wrap justify-content-between ">
-              <div>
-                <h2 class="mt-2">Note Title</h2>
-                <h4 class="mt-5">Note Created At</h4>
-                <h4 class="mt-5">Note Last Edited At</h4>
-                <h4 class="mt-5">Amount of characters</h4>
+
+            <div class="row justify-content-between">
+
+              <div class="col-4 d-flex  flex-column align-items-stretch flex-wrap justify-content-between">
+                <div>
+                  <h2 class="mt-2">Note Title</h2>
+                  <h4 class="mt-5">Note Created At</h4>
+                  <h4 class="mt-5">Note Last Edited At</h4>
+                  <h4 class="mt-5">Amount of characters</h4>
+                </div>
+                <div class="mb-1"><button class="btn btn-warning">delete Jot</button></div>
               </div>
-              <div class="mb-1"><button class="btn btn-warning">delete Jot</button></div>
+
+              <div class="col-8 mt-2">
+                <form action="">
+                  <textarea class="w-100 h-100" name="noteInputTextArea" id="noteInputTextArea" cols="50" rows="30"
+                    placeholder="Jot down your thoughts here!"></textarea>
+                </form>
+              </div>
+
+
             </div>
-
-
-
-            <div class="col-7 mt-2">
-              <form action="">
-                <textarea class="w-100 h-100" name="noteInputTextArea" id="noteInputTextArea" cols="30" rows="30"
-                  placeholder="Jot down your thoughts here!"></textarea>
-              </form>
-            </div>
-
-          </div>
-
+          </section>
+        </div>
 
       </section>
     </div>
