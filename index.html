@@ -49,9 +49,10 @@
           <div class="">
 
             <div id="formToCreateANewJot">
-              <form onsubmit="">
+
+              <form onsubmit="app.JotsController.createNewJot()">
                 <div class="d-flex justify-content-between">
-                  <input type="text" name="T" id="jotTitle" placeholder="New Jot Title" required minlength="1"
+                  <input type="text" name="title" id="jotTitle" placeholder="New Jot Title" required minlength="1"
                     maxlength="100">
                   <input type="color" name="color" id="jotColor">
                 </div>
