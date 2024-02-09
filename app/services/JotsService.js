@@ -9,9 +9,15 @@ class JotsService {
 
     createNewJot(jotFormData) {
         // console.log('jots service hooked up')
-        const newJot = new Jot(jotFormData)
+        let newJot = new Jot(jotFormData)
         // console.log('jot form new', newJot)
         AppState.jots.push(newJot)
+        newJot = AppState.activeJot
+    }
+
+    setActiveJot(jotId) {
+        const foundJot = AppState.jots.find(jot => jot.id == jotId)
+        AppState.activeJot = foundJot
     }
 }
 
