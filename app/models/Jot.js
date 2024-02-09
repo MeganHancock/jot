@@ -12,4 +12,6 @@ export class Jot {
         this.color = data.color
     }
 
+
 }
+
