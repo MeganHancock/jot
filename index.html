@@ -13,9 +13,11 @@
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>jot_checkpoint</title>
+  <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
+    defer></script>
 </head>
 
-<body>
+<body class="debug">
   <!-- SECTION -->
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
@@ -43,14 +45,19 @@
     <div class="container-fluid m-auto mt-1 p-5">
       <section class="row">
 
-        <div class="col-3 card rounded-2 p-5 me-5">
+        <div class="col-4 card rounded-2 p-5 me-5">
           <div class="">
 
             <div id="formToCreateANewJot">
-              <form action="">
-                <input type="text" placeholder="New Jot Title">
-                <p>here will be a color picker</p>
-                <button type="submit">Create</button>
+              <form onsubmit="">
+                <div class="d-flex justify-content-between">
+                  <input type="text" name="jotTitle" id="jotTitle" placeholder="New Jot Title" required minlength="1"
+                    maxlength="100">
+                  <input type="color" name="jotColor" id="jotColor">
+                </div>
+                <div class="d-grid gap-2 w-100 mt-3">
+                  <button class="d-grid gap-2" type="submit">Create</button>
+                </div>
               </form>
             </div>
 
@@ -65,9 +72,13 @@
           </div>
         </div>
 
-        <div class="col-8 card rounded-2 p-5">
-          <section class="row justify-content-between">
-            <div class="col-4 d-flex  flex-column align-items-stretch flex-wrap justify-content-between">
+        <div class="col-8 card rounded-2 p-5" id="activeJot">
+
+
+
+          <div class="row justify-content-between card">
+
+            <div class="col-4 d-flex flex-column align-items-stretch flex-wrap justify-content-between ">
               <div>
                 <h2 class="mt-2">Note Title</h2>
                 <h4 class="mt-5">Note Created At</h4>
@@ -77,17 +88,23 @@
               <div class="mb-1"><button class="btn btn-warning">delete Jot</button></div>
             </div>
 
-            <div class="col-8 mt-2">
+
+
+            <div class="col-7 mt-2">
               <form action="">
-                <textarea class="w-100 h-100" name="noteInputTextArea" id="noteInputTextArea" cols="50" rows="30"
+                <textarea class="w-100 h-100" name="noteInputTextArea" id="noteInputTextArea" cols="30" rows="30"
                   placeholder="Jot down your thoughts here!"></textarea>
               </form>
             </div>
-          </section>
-        </div>
+
+          </div>
 
 
       </section>
+    </div>
+
+    </div>
+    </section>
     </div>
 
 
