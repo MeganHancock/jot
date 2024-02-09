@@ -40,30 +40,54 @@
 
   <!-- SECTION -->
   <main>
-    <div class="container card rounded-2 m-auto mt-5 p-5">
+    <div class="container-fluid m-auto mt-1 p-5">
+      <section class="row">
 
-      <div class="row justify-content-between">
+        <div class="col-3 card rounded-2 p-5 me-5">
+          <div class="">
 
-        <div class="col-4 d-flex  flex-column align-items-stretch flex-wrap justify-content-between">
-          <div>
-            <h2 class="mt-2">Note Title</h2>
-            <h4 class="mt-5">Note Created At</h4>
-            <h4 class="mt-5">Note Last Edited At</h4>
-            <h4 class="mt-5">Amount of characters</h4>
+            <div id="formToCreateANewJot">
+              <form action="">
+                <input type="text" placeholder="New Jot Title">
+                <p>here will be a color picker</p>
+                <button type="submit">Create</button>
+              </form>
+            </div>
+
+            <div id="listOfCreatedJots">
+              <h1 class="mt-3">Jots</h1>
+              <div class="d-flex">
+                <h4 class="mt-3">Here is a jot title</h4>
+                <p>selected color</p>
+              </div>
+            </div>
+
           </div>
-          <div class="mb-1"><button class="btn btn-warning">delete Jot</button></div>
         </div>
 
-        <div class="col-8 mt-2">
-          <form action="">
-            <textarea class="w-100 h-100" name="noteInputTextArea" id="noteInputTextArea" cols="50" rows="30"
-              placeholder="Jot down your thoughts here!"></textarea>
-          </form>
+        <div class="col-8 card rounded-2 p-5">
+          <section class="row justify-content-between">
+            <div class="col-4 d-flex  flex-column align-items-stretch flex-wrap justify-content-between">
+              <div>
+                <h2 class="mt-2">Note Title</h2>
+                <h4 class="mt-5">Note Created At</h4>
+                <h4 class="mt-5">Note Last Edited At</h4>
+                <h4 class="mt-5">Amount of characters</h4>
+              </div>
+              <div class="mb-1"><button class="btn btn-warning">delete Jot</button></div>
+            </div>
+
+            <div class="col-8 mt-2">
+              <form action="">
+                <textarea class="w-100 h-100" name="noteInputTextArea" id="noteInputTextArea" cols="50" rows="30"
+                  placeholder="Jot down your thoughts here!"></textarea>
+              </form>
+            </div>
+          </section>
         </div>
 
 
-      </div>
-
+      </section>
     </div>
 
 
