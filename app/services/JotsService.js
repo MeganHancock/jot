@@ -39,7 +39,7 @@ class JotsService {
         const activeJot = AppState.activeJot
         console.log('new jot', activeJot)
         activeJot.jotBody = updatedJotBody
-
+        activeJot.lastUpdated = new Date()
         _saveJots()
 
         AppState.emit('activeJot')

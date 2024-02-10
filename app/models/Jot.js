@@ -6,8 +6,8 @@ export class Jot {
     constructor(data) {
         this.id = generateId()
         this.title = data.title
-        this.dateCreated = new Date()
-        this.lastUpdated = new Date()
+        this.dateCreated =
+            this.lastUpdated = data.lastUpdated ? new Date(data.lastUpdated) : new Date()
         this.jotBody = data.jotBody || ''
         this.color = data.color
 
