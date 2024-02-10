@@ -9,16 +9,16 @@ class ObservableAppState extends EventEmitter {
   examples = []
 
   jots = [
-    new Jot({
-      title: 'My New Jot',
-      color: '#9c2162',
-      jotBody: 'This is my very first Jot!'
-    }),
-    new Jot({
-      title: 'My Second Jot',
-      color: '#219c2f',
-      jotBody: 'This is my very second Jot!'
-    }),
+    // new Jot({
+    //   title: 'My New Jot',
+    //   color: '#9c2162',
+    //   jotBody: 'This is my very first Jot!'
+    // }),
+    // new Jot({
+    //   title: 'My Second Jot',
+    //   color: '#219c2f',
+    //   jotBody: 'This is my very second Jot!'
+    // }),
 
 
 
@@ -26,7 +26,7 @@ class ObservableAppState extends EventEmitter {
   /**
      * @type {Jot | null}   */
   activeJot = null
-
+  // jotCount = this.jots.length
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

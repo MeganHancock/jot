@@ -2,12 +2,17 @@ import { AppState } from "../AppState.js"
 import { Jot } from "../models/Jot.js"
 import { loadState, saveState } from "../utils/Store.js"
 
+
 function _saveJots() {
     saveState('jots', AppState.jots)
+    // saveState('jotCount', AppState.jotCount)
 }
 function _loadJots() {
     const jotsFromLocalStorage = loadState('jots', [Jot])
+    // const jotCountFromLocalStorage = loadState('jotCount', jotCount)
     AppState.jots = jotsFromLocalStorage
+
+    // AppState.jotCount = jotCountFromLocalStorage
 }
 
 class JotsService {
@@ -23,7 +28,10 @@ class JotsService {
         // console.log('jot form new', newJot)
         AppState.jots.push(newJot)
         newJot = AppState.activeJot
+        console.log('jot count', AppState.jots.length)
+
         _saveJots()
+
     }
 
     setActiveJot(jotId) {
@@ -53,7 +61,7 @@ class JotsService {
         }
         AppState.jots.splice(jotIndex, 1)
         AppState.emit('activeJot')
-
+        // console.log('jot count', AppState.jotCount)
         _saveJots()
 
     }

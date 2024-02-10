@@ -11,7 +11,8 @@ function _drawListOfCreatedJots() {
     jots.forEach(jot => htmlString += jot.ListOfJotsHTMLTemplate)
     console.log('drawing jot')
     setHTML('listOfCreatedJots', htmlString)
-
+    // setText('jotCount', AppState.jotCount = AppState.jots.length)
+    // _drawJotCount()
 }
 
 function _drawActiveJot() {
@@ -23,8 +24,9 @@ function _drawActiveJot() {
 
 function _drawJotCount() {
     setText('jotCount', AppState.jots.length)
-
 }
+
+
 
 
 export class JotsController {
@@ -34,6 +36,8 @@ export class JotsController {
         _drawListOfCreatedJots()
         AppState.on('jots', _drawListOfCreatedJots)
         AppState.on('activeJot', _drawActiveJot)
+        // AppState.on('jotCount', _drawJotCount)
+        // _drawJotCount()
         _drawJotCount()
 
     }
@@ -47,10 +51,9 @@ export class JotsController {
             const jotFormData = getFormData(form)
             console.log('form data', jotFormData)
             jotsService.createNewJot(jotFormData)
+            setText('jotCount', AppState.jots.length)
             // @ts-ignore
             form.reset()
-            _drawJotCount()
-
 
         } catch (error) {
             console.error(error);
@@ -84,6 +87,7 @@ export class JotsController {
         }
         document.getElementById('activeJotArea').style.display = "none";
         jotsService.removeJot(jotId)
+        setText('jotCount', AppState.jots.length)
 
 
     }
