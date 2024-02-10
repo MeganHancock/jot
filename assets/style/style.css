@@ -1,1 +1,6 @@
 /* BASIC STYLES HERE */
+.color-circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}

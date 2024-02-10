@@ -2,7 +2,7 @@ import { AppState } from "../AppState.js";
 import { jotsService } from "../services/JotsService.js";
 import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
-import { setHTML } from "../utils/Writer.js";
+import { setHTML, setText } from "../utils/Writer.js";
 
 
 function _drawListOfCreatedJots() {
@@ -21,6 +21,11 @@ function _drawActiveJot() {
 
 }
 
+function _drawJotCount() {
+    setText('jotCount', AppState.jots.length)
+
+}
+
 
 export class JotsController {
 
@@ -29,6 +34,8 @@ export class JotsController {
         _drawListOfCreatedJots()
         AppState.on('jots', _drawListOfCreatedJots)
         AppState.on('activeJot', _drawActiveJot)
+        _drawJotCount()
+
     }
 
     createNewJot() {
@@ -40,6 +47,10 @@ export class JotsController {
             const jotFormData = getFormData(form)
             console.log('form data', jotFormData)
             jotsService.createNewJot(jotFormData)
+            // @ts-ignore
+            form.reset()
+            _drawJotCount()
+
 
         } catch (error) {
             console.error(error);
@@ -49,7 +60,33 @@ export class JotsController {
 
     setActiveJot(jotId) {
         console.log('setting active jot', jotId)
+        document.getElementById('activeJotArea').style.display = "block";
         jotsService.setActiveJot(jotId)
 
     }
+
+    updateJot() {
+        event.preventDefault()
+        console.log('is blur working')
+        const jotTextElement = document.getElementById('jotBody')
+        console.log(jotTextElement)
+        // @ts-ignore
+        const updatedJotBody = jotTextElement.value
+        console.log(updatedJotBody);
+        jotsService.updateJot(updatedJotBody)
+    }
+
+    async removeJot(jotId) {
+        console.log('removing jot with this id', jotId)
+        const wantsToRemove = await Pop.confirm('You worked hard on this Jot, are you sure you want to delete it? ')
+        if (!wantsToRemove) {
+            return
+        }
+        document.getElementById('activeJotArea').style.display = "none";
+        jotsService.removeJot(jotId)
+
+
+    }
+
+
 }

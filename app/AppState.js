@@ -20,6 +20,8 @@ class ObservableAppState extends EventEmitter {
       jotBody: 'This is my very second Jot!'
     }),
 
+
+
   ]
   /**
      * @type {Jot | null}   */
