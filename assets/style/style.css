@@ -1,16 +1,47 @@
-/* BASIC STYLES HERE */
-/* body {
-    background-color: ;
-    /* background-size: fill;
-    background-position: cover;
-    user-select: none; */
+:root {
+    --bg: #f3e2e3;
+    --card-bg: #1d1e2c;
+    --heading-text: #DD8DD5;
+    --date-color: #AC9FBB;
+    --btn-color: #770058;
+    --header-bg: #1d1e2c;
 
-#jotColor {
-    border-radius: 50%;
+
 }
 
-.color-circle {
+body {
+    background-color: var(--bg);
+}
+
+.dark-header {
+    color: var(--card-bg);
+}
+
+
+/* .color-circle {
     height: 30px;
     width: 30px;
     border-radius: 50%;
+} */
+
+.buttons {
+    background-color: var(--btn-color);
+    color: var(--bg) !important;
+}
+
+button {
+    background-color: var(--btn-color);
+    color: var(--bg)
+}
+
+.date-text {
+    color: var(--date-color);
+}
+
+.light-header {
+    color: var(--heading-text);
+}
+
+.card-bg {
+    background-color: var(--card-bg);
 }

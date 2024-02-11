@@ -16,13 +16,17 @@ export class Jot {
     get ActiveJotHTMLTemplate() {
         return /*html*/`
     
-    <div class="row p-5 bg-white rounded-3 justify-content-between shadow" style="border-style: solid; border-color: ${this.color};">
+    <div class="row p-5 rounded-3 justify-content-between shadow card-bg" style="border-style: solid; border-color: ${this.color};">
 
     <div class="col-4 d-flex flex-column align-items-stretch flex-wrap justify-content-between">
         <div>
-        <h2 class="mt-2">${this.title}</h2>
-        <h4 class="mt-5">Jot Created on ${this.DateCreatedDate} at ${this.DateCreatedTime}</h4>
-        <h4 class="mt-5">Last Updated on ${this.LastUpdatedDate} at ${this.LastUpdatedTime}</h4>
+            <div class="d-flex">
+        <h2 class="mt-2 light-header">${this.title} </h2>
+        <span style="color: ${this.color}" class="fs-1 mdi mdi-lead-pencil"></span>
+        <!-- <div class="ms-2 mt-3 color-circle" style="background-color: ${this.color};"></div> -->
+    </div>
+        <h4 class="mt-5 date-text">Jot Created on ${this.DateCreatedDate} at ${this.DateCreatedTime}</h4>
+        <h4 class="mt-5 date-text">Last Updated on ${this.LastUpdatedDate} at ${this.LastUpdatedTime}</h4>
         
             </div>
         <div class="mb-1"><button onclick="app.JotsController.removeJot('${this.id}')" class="">delete Jot</button>
@@ -45,11 +49,12 @@ export class Jot {
     get ListOfJotsHTMLTemplate() {
         return /*html*/ `
         
-        <div onclick="app.JotsController.setActiveJot('${this.id}')" role="button" class="d-flex" >
-        <h4 class="mt-3" style="text-decoration: underline;
-            text-decoration-color: ${this.color};">${this.title}</h4>
-         <p class="ms-2 mt-3 color-circle" 
-         style="background-color: ${this.color};"></p>
+        <div onclick="app.JotsController.setActiveJot('${this.id}')" role="button" class="d-flex light-header" >
+        <h4 class="mt-3" class="light-header" style="text-decoration: underline;
+            text-decoration-color: ${this.color};">${this.title} </h4>
+            <span style="color: ${this.color}" class="mb-1 fs-1 mdi mdi-lead-pencil"></span>
+         <!-- <div class="ms-2 mt-3 color-circle" 
+         style="background-color: ${this.color};"></div> -->
         </div>
         
         `
