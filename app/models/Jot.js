@@ -25,7 +25,8 @@ export class Jot {
         <h4 class="mt-5">Last Updated on ${this.LastUpdatedDate} at ${this.LastUpdatedTime}</h4>
         
             </div>
-        <div class="mb-1"><button onclick="app.JotsController.removeJot('${this.id}')" class="">delete Jot</button></div>
+        <div class="mb-1"><button onclick="app.JotsController.removeJot('${this.id}')" class="">delete Jot</button>
+    </div>
     </div>
 
     <div class="col-8 mt-2">

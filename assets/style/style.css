@@ -1,4 +1,14 @@
 /* BASIC STYLES HERE */
+/* body {
+    background-color: ;
+    /* background-size: fill;
+    background-position: cover;
+    user-select: none; */
+
+#jotColor {
+    border-radius: 50%;
+}
+
 .color-circle {
     height: 30px;
     width: 30px;
