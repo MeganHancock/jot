@@ -1,12 +1,18 @@
 :root {
-    --bg: #f3e2e3;
-    --card-bg: #1d1e2c;
-    --heading-text: #DD8DD5;
-    --date-color: #AC9FBB;
-    --btn-color: #770058;
+    --bg: #ECE2D0;
+    --card-bg: #eccec7;
+    --heading-text: #582C4D;
+    --date-color: #7D4A5B;
+    --btn-color: #A26769;
     --header-bg: #1d1e2c;
 
 
+}
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 body {
@@ -14,9 +20,12 @@ body {
 }
 
 .dark-header {
-    color: var(--card-bg);
+    color: var(--heading-text);
 }
 
+.border-none {
+    border: none !important;
+}
 
 /* .color-circle {
     height: 30px;
@@ -27,11 +36,16 @@ body {
 .buttons {
     background-color: var(--btn-color);
     color: var(--bg) !important;
+    border-radius: 4px;
+    border: none;
 }
 
 button {
     background-color: var(--btn-color);
-    color: var(--bg)
+    color: var(--bg);
+    border-radius: 4px;
+    border: none;
+    font-size: 22px;
 }
 
 .date-text {

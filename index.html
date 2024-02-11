@@ -12,6 +12,10 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit&family=Outfit:wght@200&display=swap"
+    rel="stylesheet">
   <title>jot_checkpoint</title>
   <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
     defer></script>
@@ -43,12 +47,14 @@
 
 
 
-    <div class="offcanvas offcanvas-start show card-bg " tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-      <div class="offcanvas-header">
-        <div class="offcanvas-title" id="offcanvasLabel">
+    <div class="offcanvas offcanvas-start show card-bg border-none" tabindex="-1" id="offcanvas"
+      aria-labelledby="offcanvasLabel">
+      <div class="offcanvas-header border-none">
+        <div class="offcanvas-title border-none" id="offcanvasLabel">
           <div class="d-flex justify-content-between">
-            <h1 class="mt-3 ms-5 me-5 light-header">Jots</h1>
-            <span class="mt-2 fs-1 ms-5" id="jotCount"></span>
+            <h1 class="display-2 mt-3 ms-2 me-2 light-header">Jots
+              <span class="mt-5 fs-1 ms-1" id="jotCount"></span>
+            </h1>
           </div>
         </div>
         <button type="button" class="btn-close buttons" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -66,9 +72,9 @@
                 <div id="formToCreateANewJot">
                   <form onsubmit="app.JotsController.createNewJot()">
                     <div class="d-flex justify-content-between">
-                      <input type="text" name="title" id="jotTitle" placeholder="New Jot Title" required minlength="3"
-                        maxlength="15">
-                      <input type="color" name="color" id="jotColor">
+                      <input type="text" name="title" id="jotTitle" class="fs-5 w-75 border-none"
+                        placeholder="New Jot Title" required minlength="3" maxlength="15">
+                      <input type="color" name="color" id="jotColor" class="border-none">
                     </div>
                     <div class="d-grid gap-2 w-100 mt-3">
                       <button class="d-grid gap-2 button" type="submit">Create</button>
