@@ -21,8 +21,8 @@ export class Jot {
     <div class="col-4 d-flex flex-column align-items-stretch flex-wrap justify-content-between">
         <div>
         <h2 class="mt-2">${this.title}</h2>
-        <h4 class="mt-5">Date created: ${this.dateCreated}</h4>
-        <h4 class="mt-5">Last Updated: ${this.lastUpdated}</h4>
+        <h4 class="mt-5">Jot Created on ${this.DateCreatedDate} at ${this.DateCreatedTime}</h4>
+        <h4 class="mt-5">Last Updated on ${this.LastUpdatedDate} at ${this.LastUpdatedTime}</h4>
         
             </div>
         <div class="mb-1"><button onclick="app.JotsController.removeJot('${this.id}')" class="">delete Jot</button></div>
@@ -54,6 +54,21 @@ export class Jot {
         `
     }
 
+
+    get DateCreatedDate() {
+        return this.dateCreated.toLocaleDateString()
+    }
+    get DateCreatedTime() {
+        return this.dateCreated.toLocaleTimeString()
+    }
+
+
+    get LastUpdatedTime() {
+        return this.lastUpdated.toLocaleTimeString()
+    }
+    get LastUpdatedDate() {
+        return this.lastUpdated.toLocaleDateString()
+    }
 
 }
 
